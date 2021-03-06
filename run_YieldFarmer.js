@@ -24,14 +24,14 @@ async function main() {
     await yieldFarmer.sendFunds("5", address.dai, address.yieldFarmer);
     await logBalances("After first sending to YieldFarmer");
 
-    await yieldFarmer.compBorrowMaxComp("5", address.dai, address.cDai, "3");
-    await logBalances("After Maximazing for CompTokens");
+    //await yieldFarmer.compBorrowMaxComp("5", address.dai, address.cDai, "3");
+    //await logBalances("After Maximazing for CompTokens");
     
-    //await yieldFarmer.compLending("5", address.dai, address.cDai);
-    //await logBalances("After Lending");
+    await yieldFarmer.compLending("5", address.dai, address.cDai);
+    await logBalances("After Lending");
 
-    //await yieldFarmer.compBorrowSimple(address.cDai);
-    //await logBalances("After Borrow");
+    await yieldFarmer.compBorrowSimple(address.cDai);
+    await logBalances("After Borrow");
 
     await yieldFarmer.sendFunds("5", address.dai, address.yieldFarmer);
     await logBalances("After second sending to YieldFarmer");

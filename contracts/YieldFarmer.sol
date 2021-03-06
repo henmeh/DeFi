@@ -35,7 +35,7 @@ contract YieldFarmer {
             return _mintResult;
     }
 
-    function borrowSimple (address _cTokenAddress) public returns(uint) {
+    function borrowSimple (address _cTokenAddress) public onlyOwner returns(uint) {
        // Enter markets to use the token as collateral
         address[] memory _markets = new address[](1);
         _markets[0] = _cTokenAddress;
